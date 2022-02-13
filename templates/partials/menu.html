@@ -14,6 +14,11 @@
 
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mx-auto">
+                <a class="navbar-brand d-none d-lg-block" href="{% url 'index' %}">
+                    Bell Labs
+                    <strong class="d-block">Especialista em saúde</strong>
+                </a>
+
                 <li class="nav-item active">
                     <a class="nav-link" href="{% url 'index' %}">Home</a>
                 </li>
@@ -26,11 +31,6 @@
                     <a class="nav-link" href="#timeline">Como funciona</a>
                 </li>
 
-                <a class="navbar-brand d-none d-lg-block" href="{% url 'index' %}">
-                    Bell Labs
-                    <strong class="d-block">Especialista em saúde</strong>
-                </a>
-
                 <li class="nav-item">
                     <a class="nav-link" href="#reviews">Feedbacks</a>
                 </li>
@@ -40,7 +40,15 @@
                 </li>
 
                 <li class="nav-item">
+<<<<<<< HEAD:home/templates/partials/menu.html
                     <a class="nav-link" href="{% url 'cadastromedico' %}">Cadastre-se</a>
+=======
+                    <a class="nav-link" href="{% url 'areamedico' %}">Área do Médico</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'areapaciente' %}">Área do Paciente</a>
+>>>>>>> bbcd1c91cbf6df3f60489c3d61844047a96a8950:templates/partials/menu.html
                 </li>
             </ul>
         </div>
