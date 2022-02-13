@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        th,
+        td {
+            border: 1px black solid;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Medicos</h1>
+    {% if med %}
+    <h1>Show Data</h1>
+    <h3>{{med}}</h3>
+    <table>
+        <tr>
+            <th>nome_medico</th>
+            <th>crm</th>
+            <th>cpf</th>
+            <th>rg</th>
+        </tr>
+        <tr>
+            {% for st in med %}
+            <td>{{st.nome_medico}}</td>
+            <td>{{st.crm}}</td>
+            <td>{{st.cpf}}</td>
+            <td>{{st.rg}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <h1>No Data</h1>
+    {% endif %}
+</body>
+
+</html>
