@@ -2,10 +2,12 @@
 <nav class="navbar navbar-expand-lg bg-light fixed-top shadow-lg">
     <div class="container">
         <a class="navbar-brand mx-auto d-lg-none" href="{% url 'index' %}">
-            Bell Labs
+            Bell Labs 
             <strong class="d-block">Especialista em saúde</strong>
+            <!-- <div class="col-lg-6 col-6 ps-0">
+                <img src="{% static 'images/gallery/banner-leve.png' %}" class="img-fluid reviews-image" >
+            </div> -->
         </a>
-
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -38,10 +40,14 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'cadastromedico' %}">Cadastro de Médicos</a>
+                    <a class="nav-link" href="{% url 'cadastromedico' %}">Cadastre-se</a>
                 </li>
             </ul>
         </div>
-
+        
     </div>
+    <div>
+        <a class="btn btn-primary" href="#" role="button">Login</a>
+    </div>
+    
 </nav>
