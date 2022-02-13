@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block content %}
+       <main>
+        <style>
+            .button {
+              border: none;
+              color: white;
+              padding: 15px 20px;
+              text-align: center;
+              text-decoration: none;
+              display: inline-block;
+              font-size: 16px;
+              margin: 4px 2px;
+              cursor: pointer;
+            }
+            .button1 {background-color: #4CAF50;} /* Green */
+            .button2 {background-color: #008CBA;} /* Blue */
+            </style>
+
+
+            {% include 'partials/menu.html' %}
+            
+            <section class="hero" id="hero">
+                <div class="container">
+                    <div class="row">
+
+                     
+                        <button class="button button2" type="button">Marcar consulta</button> 
+                        <button class="button button2" type="button">Ver consultas</button> 
+                        <button class="button button2" type="button">Realizar consulta</button> 
+                        <button class="button button2" type="button">Atualizar cadastro</button> 
+                        <button class="button button2" type="button">Ver histórico</button> 
+                        <button class="button button2" type="button">Realizar feedback</button> 
+
+                    </div>
+                </div>
+            </section>
+
+
+        </main>
+
+        {% include 'partials/footer.html' %}
+
+{% endblock %}

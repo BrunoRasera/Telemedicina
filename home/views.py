@@ -8,6 +8,9 @@ def index(request):
 def cadastromedico(request):
     return render(request, 'cadastromedico.html')
 
+def areapaciente(request):
+    return render(request, 'areapaciente.html')
+
 #chama os médicos do banco para retornar na página
 def medico(request):
     medico = Medicos.objects.all()
