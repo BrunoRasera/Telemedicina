@@ -1,46 +1,84 @@
 {% extends 'base.html' %}
 {% load static %}
 
-    {% block content %}
-       <main>
-        <style>
-            .button {
-              border: none;
-              color: white;
-              padding: 15px 20px;
-              text-align: center;
-              text-decoration: none;
-              display: inline-block;
-              font-size: 16px;
-              margin: 4px 2px;
-              cursor: pointer;
-            }
-            .button1 {background-color: #4CAF50;} /* Green */
-            .button2 {background-color: #008CBA;} /* Blue */
-            </style>
+{% block content %}
+<main>
+    <style>
+        a:link {
+            /* unvisited link */
+            color: white;
+            text-decoration: none;
+        }
+
+        a:visited {
+            /* visited link */
+            color: white;
+            text-decoration: none;
+        }
+
+        a:hover {
+            /* mouse over link */
+            color: white;
+            border-bottom: none;
+            text-decoration: none;
+        }
+
+        a:active {
+            /* active link */
+            color: white;
+            text-decoration: none;
+        }
+
+        .button {
+            border: none;
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .button1 {
+            background-color: #4CAF50;
+        }
+
+        /* Green */
+        .button2 {
+            background-color: #008CBA;
+        }
+
+        /* Blue */
+        .button2:hover {
+            background-color: #4CAF50;
+            color: white;
+    </style>
 
 
-            {% include 'partials/menu.html' %}
-            
-            <section class="hero" id="hero">
-                <div class="container">
-                    <div class="row">
+    {% include 'partials/menu.html' %}
 
-                     
-                        <button class="button button2" type="button">Marcar consulta</button> 
-                        <button class="button button2" type="button">Ver consultas</button> 
-                        <button class="button button2" type="button">Realizar consulta</button> 
-                        <button class="button button2" type="button">Atualizar cadastro</button> 
-                        <button class="button button2" type="button">Ver histórico</button> 
-                        <button class="button button2" type="button">Realizar feedback</button> 
-
-                    </div>
-                </div>
-            </section>
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="row">
 
 
-        </main>
+                <button class="button button2" type="button">Marcar consulta</a></button>
+                <button class="button button2" type="button">Ver consultas</button>
+                <button class="button button2" type="button"> <a href="https://meet.google.com/new">Realizar
+                        consulta</a>    </button>
+                <button class="button button2" type="button">Atualizar cadastro</button>
+                <button class="button button2" type="button">Ver histórico</button>
+                <button class="button button2" type="button">Realizar feedback</button>
 
-        {% include 'partials/footer.html' %}
+            </div>
+        </div>
+    </section>
+
+
+</main>
+
+{% include 'partials/footer.html' %}
 
 {% endblock %}
