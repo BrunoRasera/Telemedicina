@@ -3,6 +3,7 @@
 
 {% block content %}
 <main>
+    {% include 'partials/menu.html' %}
     <style>
         a:link {
             /* unvisited link */
@@ -54,10 +55,11 @@
         .button2:hover {
             background-color: #4CAF50;
             color: white;
+        }
     </style>
 
 
-    {% include 'partials/menu.html' %}
+    
 
     <section class="hero" id="hero">
         <div class="container">
@@ -80,3 +82,4 @@
 {% include 'partials/footer.html' %}
 
 {% endblock %}
+        

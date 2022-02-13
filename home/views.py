@@ -22,8 +22,11 @@ def areamedico(request):
         return redirect('/')
     return render(request,'areamedico.html',{'form':form})
 
+
 def consulta(request):
+    # Get all
     med = Medicos.objects.all()
+    #med = Medicos.objects.get()
     print("Myoutput",med)
     return render(request,'consulta.html',{'med': med})
 
