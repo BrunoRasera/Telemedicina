@@ -5,9 +5,6 @@ from .forms import MedicosForm
 def index(request):
     return render(request,'index.html')
 
-def cadastromedico(request):
-    return render(request, 'cadastromedico.html')
-
 def areapaciente(request):
     return render(request, 'areapaciente.html')
 
@@ -16,14 +13,18 @@ def medico(request):
     medico = Medicos.objects.all()
     return render(request, 'medicos.html')
 
-def form_view(request):
+def areamedico(request):
     form = MedicosForm()
     if request.method == 'POST':
         form = MedicosForm(request.POST)
         if form.is_valid():
             form.save()
         return redirect('/')
-    return render(request,'cadastromedico.html',{'form':form})
+    return render(request,'areamedico.html',{'form':form})
 
+def consulta(request):
+    med = Medicos.objects.all()
+    print("Myoutput",med)
+    return render(request,'consulta.html',{'med': med})
 
 

@@ -8,7 +8,7 @@ class Medicos(models.Model):
     rg = models.CharField(max_length=20)
     data_nascimento = models.DateField()
     telefone = models.CharField(max_length=20)
-    endereco = models.TextField(max_length = 300)
+    endereco = models.CharField(max_length = 300)
     complemento = models.CharField(max_length=255, blank=True)
     bairro = models.CharField(max_length=255)
     cidade = models.CharField(max_length=255)
