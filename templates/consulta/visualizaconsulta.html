@@ -16,10 +16,10 @@
                 <div class="row">
                     <div class="col text-center ">
                         <ul class="list-group list-group-horizontal text-white bg-dark text-uppercase">
-                            <li class="list-group-item flex-fill pt-3">Especialidade</li>
-                            <li class="list-group-item flex-fill">Medico</li>
+                            <li class="list-group-item flex-fill pt-3">Médico</li>
+                            <li class="list-group-item flex-fill">Valor</li>
+                            <li class="list-group-item flex-fill">Receita</li>
                             <li class="list-group-item flex-fill">Data</li>
-                            <li class="list-group-item flex-fill">Horario</li>
                             <li class="list-group-item flex-fill">Editar</li>
                         </ul>
                     </div>
@@ -27,30 +27,17 @@
 
                 <div class="row">
                     <div class="col-12 text-center align-items-center">
+                        {% for st in pac %}
                         <ul class="list-group list-group-horizontal">
-                            <li class="list-group-item flex-fill pt-3">Especialidade</li>
-                            <li class="list-group-item flex-fill">Medico</li>
-                            <li class="list-group-item flex-fill">Data</li>
-                            <li class="list-group-item flex-fill">Horario</li>
+                            <li class="list-group-item flex-fill pt-3">{{st.medico.nome_medico}}</li>
+                            <li class="list-group-item flex-fill">{{st.pagamento.valor}}</li>
+                            <li class="list-group-item flex-fill">{{st.receita}}</li>
+                            <li class="list-group-item flex-fill">{{st.data}}</li>
                             <button type="button" class="btn btn-secondary list-group-item flex-fill"><a href="/consulta/agendaconsulta">Editar</a></button>
                         </ul>
-                        <ul class="list-group list-group-horizontal">
-                            <li class="list-group-item flex-fill pt-3">Especialidade</li>
-                            <li class="list-group-item flex-fill">Medico</li>
-                            <li class="list-group-item flex-fill">Data</li>
-                            <li class="list-group-item flex-fill">Horario</li>
-                            <button type="button" class="btn btn-secondary list-group-item flex-fill"><a href="/consulta/agendaconsulta">Editar</a></button>
-                        </ul>
-                        <ul class="list-group list-group-horizontal">
-                            <li class="list-group-item flex-fill pt-3">Especialidade</li>
-                            <li class="list-group-item flex-fill">Medico</li>
-                            <li class="list-group-item flex-fill">Data</li>
-                            <li class="list-group-item flex-fill">Horario</li>
-                            <button type="button" class="btn btn-secondary list-group-item flex-fill"><a href="/consulta/agendaconsulta">Editar</a></button>
-                        </ul>
+                        {% endfor %}
                     </div>
-                    
-                    
+
                 </div>
             </div>
         </section>

@@ -18,7 +18,11 @@ def pagamentoconsulta(request):
     return render(request, 'consulta/pagamentoconsulta.html')
 
 def visualizaconsulta(request):
-    return render(request, 'consulta/visualizaconsulta.html')
+    pac = Consulta.objects.all()
+    return render(request, 'consulta/visualizaconsulta.html',{'pac': pac})
+
+# def visualizaconsulta(request):
+#     return render(request, 'consulta/visualizaconsulta.html')
 
 def agendaconsulta(request):
     if request.method == 'POST':
