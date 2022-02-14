@@ -17,8 +17,8 @@ def paciente_verconsulta(request):
 def pagamentoconsulta(request):
     return render(request, 'consulta/pagamentoconsulta.html')
 
-def visualizarconsulta(request):
-    return render(request, 'consulta/visualizarconsulta.html')
+def visualizaconsulta(request):
+    return render(request, 'consulta/visualizaconsulta.html')
 
 def agendaconsulta(request):
     if request.method == 'POST':

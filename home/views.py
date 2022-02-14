@@ -20,7 +20,14 @@ def areamedico(request):
         if form.is_valid():
             form.save()
         return redirect('/')
-    return render(request,'areamedico.html',{'form':form})
+    elif request.user.is_authenticated:
+        medicos = Medicos.objects.values_list('nome_medico', flat=True)
+        if request.user.username in medicos:
+            print("usuario eh medico")
+            return render(request,'areamedico.html',{'form':form})
+    print("usuario nao eh medico")
+    return redirect('/')
+        
 
 
 def consulta(request):

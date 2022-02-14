@@ -15,7 +15,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="section-heading">
-                    <h2>Login</h2>
+                    <h2>Histórico</h2>
                 </div>
             </div>
         </div>
@@ -26,16 +26,15 @@
                         {% csrf_token %}
                         <div class="row">
                             <div class="col-12 col-lg-12">
-                            <label for="email"><b>Email</b></label>
-                                <input type="text" id="email" class="form-control" name="email" placeholder="Entre com o email cadastrado">
-                            </div>
-                                <div class="col-12 col-lg-12">
-                                <label for="senha"><b>Senha</b></label>
-                                <input id="senha" type="password" class="form-control" name="senha" placeholder="Digite aqui sua senha">
-                            </div>
+                            <label for="email"><b>Consultas</b></label>
+                                <select type="text" id="email" class="form-control" name="email" placeholder="Entre com o email cadastrado">
+                                    <option value="None">Escolha uma consulta</option>
+                                    {% for cons in consulta %}
+                                    <option>{{ consulta.data }}</option>
+                                    {% endfor %}
+                                </select>
                             <div class="my-5 col-12 text-center">
-                                <button class="mx-5 btn btn-success" type="submit">Acessar sua conta</button>
-                                <button type="button" class="mx-5 btn btn-primary" onclick="exibirCriarConta()">Ainda não tem conta? Clique aqui</button>
+                            <button class="btn btn-success" type="submit">Abrir</button>
                             </div>
                         </div>
                     </form>
@@ -44,13 +43,6 @@
         </div>
     </div>
 </div>
-
-<script>
-function exibirCriarConta()
-{
-     location.href = "{% url 'cadastro' %}";
-} 
-</script>
 
 {% include 'partials/footer.html' %}
 {% endblock %}
