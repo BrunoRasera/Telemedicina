@@ -3,7 +3,7 @@
 
 {% block content %}
 <main>
-    <h1 class="ms-5 mt-2"> Olá, {{ user.username }}  </h1>
+    <h1 class="ms-5 mt-2"> Olá, {{ user.username }} </h1>
     <style>
         a:link {
             /* unvisited link */
@@ -64,22 +64,19 @@
     <section class="hero" id="hero">
         <div class="container">
             <div class="row">
-
-
-                <button class="button button2" type="button">Marcar consulta</a></button>
-                <button class="button button2" type="button"> <a href="{% url 'paciente_verconsulta' %}">Ver
-                        consultas</a></button>
+                <button class="button button2" type="button"> <a href="{% url 'visualizaconsulta' %}">Visualizar
+                        Consultas</a> </button>
                 <button class="button button2" type="button"> <a href="https://meet.google.com/new">Realizar
                         consulta</a> </button>
                 <button class="button button2" type="button"> <a href="{% url 'agendaconsulta' %}">Agenda
-                        consulta - Leo</a> </button>
+                        consulta</a> </button>
                 <button class="button button2" type="button"> <a href="{% url 'pagamentoconsulta' %}">Pagamento
-                        - Leo</a> </button>
-                <button class="button button2" type="button"> <a
-                        href="{% url 'visualizaconsulta' %}">Visualizar - Leo</a> </button>
+                    </a> </button>
                 <button class="button button2" type="button">Atualizar cadastro</button>
-                <button class="button button2" type="button"><a href="{% url 'historicopaciente' %}">Ver histórico</a> </button>
-                <button class="button button2" type="button"><a href="{% url 'feedback_consulta' %}">Realizar feedback</a></button>
+                <button class="button button2" type="button"><a href="{% url 'historicopaciente' %}">Ver histórico</a>
+                </button>
+                <button class="button button2" type="button"><a href="{% url 'feedback_consulta' %}">Realizar
+                        feedback</a></button>
 
             </div>
         </div>
