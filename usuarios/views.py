@@ -24,6 +24,7 @@ def cadastro(request):
         if User.objects.filter(email = email).exists():
             print('Usuário já cadastrado')
             return redirect('cadastro')
+            
         user = User.objects.create_user(username=nome, email=email, password=senha)
         user.save()
 
@@ -44,14 +45,16 @@ def login(request):
         print(email_digitado, senha_digitada)
 
         if User.objects.filter(email = email_digitado).exists():
-            email1 = User.objects.filter(email=email_digitado).values_list('email', flat=True)
-            user = auth.authenticate(request, email=email1, password=senha_digitada)
+            #email1 = User.objects.filter(email=email_digitado).values_list('email', flat=True)
+            user = auth.authenticate(request, email=email_digitado, password=senha_digitada)
+            print("Usuario: ", user)
             if user is not None:
                 auth.login(request, user)
                 print('Login realizado com sucesso')
                 return redirect('dashboard')
 
-        #return redirect('dashboard')
+        print("Nao foi autenticado. ")
+        return redirect('login')
     return render(request, 'usuarios/login.html')
 
 def logout(request):
