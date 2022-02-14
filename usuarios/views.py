@@ -44,18 +44,23 @@ def login(request):
         print(email, senha)
 
         if User.objects.filter(email = email).exists():
-            nome = User.objects.filter(email=email).values_list('username', flat=True)
+            nome = User.objects.filter(email=email).values_list('username', flat=True)[0]
             user = auth.authenticate(request, username=nome, password=senha)
+            print(user)
             if user is not None:
                 auth.login(request, user)
                 print('Login realizado com sucesso')
                 return redirect('dashboard')
 
-        return redirect('dashboard')
+        return redirect('login')
     return render(request, 'usuarios/login.html')
 
 def logout(request):
-    pass
+    auth.logout(request)
+    return redirect('index')
 
 def dashboard(request):
-    return render(request, 'usuarios/dashboard.html')
+    if request.user.is_authenticated:
+        return render(request, 'usuarios/dashboard.html')
+    else:
+        return redirect('index')

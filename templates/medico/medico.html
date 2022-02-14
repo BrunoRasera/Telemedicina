@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- Preloader -->
+<div id="preloader">
+    <i class="circle-preloader"></i>
+    <img src="{% static 'img/core-img/pizza.png' %}" alt="">
+</div>
+
+{% include 'partials/menu.html' %}
+
+<!-- ##### Contact Form Area Start ##### -->
+<div class="contact-area section-padding-0-80">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-heading">
+                    <h2>Criar conta</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="contact-form-area">
+                    <form action="{% url 'medico' %}" method="POST">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-12 col-lg-12">
+                                <label for="nome_receita"><b>Nome completo</b></label>
+                                <input type="text" class="form-control" name="nome_medico" placeholder="Ex.:Guilherme Lima" required>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <label for="nome_receita"><b>cpf</b></label>
+                                <input type="text" class="form-control" name="cpf" placeholder="Ex.:Guilherme Lima" required>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <label for="nome_receita"><b>rg</b></label>
+                                <input type="text" class="form-control" name="rg" placeholder="Ex.:Guilherme Lima" required>
+                            </div>
+                            <div class="col-8 col-lg-12">
+                                <label for="nome_receita"><b>endereco</b></label>
+                                <input type="text" class="form-control" name="endereco" placeholder="Ex.:Guilherme Lima" required>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <label for="nome_receita"><b>cidade</b></label>
+                                <input type="text" class="form-control" name="cidade" placeholder="Ex.:Guilherme Lima" required>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <label for="nome_receita"><b>estado</b></label>
+                                <input type="text" class="form-control" name="estado" placeholder="Ex.:Guilherme Lima" required>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <label for="nome_receita"><b>bairro</b></label>
+                                <input type="text" class="form-control" name="bairro" placeholder="Ex.:Guilherme Lima" required>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <label for="nome_receita"><b>cep</b></label>
+                                <input type="text" class="form-control" name="cep" placeholder="Ex.:Guilherme Lima" required>
+                            </div>
+                            <div class="col-12 col-lg-12">
+                                <label for="nome_receita"><b>Complemento</b></label>
+                                <input type="text" class="form-control" name="complemento" placeholder="Ex.:Guilherme Lima">
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <label for="nome_receita"><b>telefone</b></label>
+                                <input type="text" class="form-control" name="telefone" placeholder="Ex.:Guilherme Lima" required>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <label for="nome_receita"><b>crm</b></label>
+                                <input type="text" class="form-control" name="crm" placeholder="Ex.:Guilherme Lima" required>
+                            </div>
+                            <div class="col-12 col-lg-4">
+                                <label for="nome_receita"><b>area_atuacao</b></label>
+                                <input type="text" class="form-control" name="area_atuacao" placeholder="Ex.:Guilherme Lima" required>
+                            </div>
+                            <div class="col-12 col-lg-4">
+                                <label for="nome_receita"><b>especialidade</b></label>
+                                <input type="text" class="form-control" name="especialidade" placeholder="Ex.:Guilherme Lima" required>
+                            </div>
+                            <div class="col-12 col-lg-4">
+                                <label for="nome_receita"><b>nascimento</b></label>
+                                <input type="date" class="form-control" name="data_nascimento" placeholder="Ex.:Guilherme Lima" required>
+                            </div>
+                            <div class="col-12 col-lg-12">
+                                <label for="nome_receita"><b>Situação</b></label>
+                                <input type="text" class="form-control" name="situacao" placeholder="Ex.:Guilherme Lima" required>
+                            </div>
+                            <div class="col-12 text-center">
+                                <button class="btn btn-success" type="submit">Cadastrar Paciente</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include 'partials/footer.html' %}
+{% endblock %}

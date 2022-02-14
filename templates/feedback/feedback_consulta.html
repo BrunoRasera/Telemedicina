@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block content %}
+       <main>
+
+        {% include 'partials/menu.html' %}
+
+        <section class="section-padding" id="booking">
+            <div class="container">
+                <div class="row">
+                
+                    <div class="col-lg-8 col-12 mx-auto">
+                        <div class="booking-form">
+                            
+                            <h2 class="text-center mb-lg-3 mb-2">Feedback</h2>
+                        
+                            <form role="form" action="{% url 'feedback_consulta' %}" method="post">
+                                {% csrf_token %}
+                                <div class="row">
+                                    <div class="col-lg-6 col-12">
+                                        <input type="text" name="name" id="name" class="form-control" placeholder="Nome inteiro">
+                                    </div>
+
+                                    <div class="col-lg-6 col-12">
+                                        <select name="usuario" id="usuario" class="h-90 mt-3 form-select">
+                                            <option value="None">Escolha uma opção</option>
+                                            <option value="paciente">Paciente</option>
+                                            <option value="medico">Médico</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <textarea class="form-control" rows="5" id="feedback" name="feedback" placeholder="Additional Message"></textarea>
+                                    </div>
+
+                                    <div class="col-lg-3 col-md-4 col-6 mx-auto">
+                                        <button type="submit" class="form-control" id="submit-button">Book Now</button>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    {% include 'partials/footer.html' %}
+
+{% endblock %}
