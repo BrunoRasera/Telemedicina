@@ -2,7 +2,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.models import User
 from django.contrib import auth
-from consulta.models import Consulta, Paciente
+from consulta.models import Consulta, Paciente, Medicos
 from .models import Medicos
 from .forms import ConsultaForm
 
@@ -11,6 +11,19 @@ def pagamentoconsulta(request):
     return render(request, 'consulta/pagamentoconsulta.html')
 
 def visualizaconsulta(request):
+    user = request.user.username
+    paciente = Paciente.objects.values_list('nome_paciente', flat=True)
+    #print(paciente)
+    if user in paciente:
+        idPaciente = Paciente.objects.filter(nome_paciente=user).values_list('id', flat=True)[0]
+        consultas = Consulta.objects.values_list('paciente', flat=True)
+        #print(consultas, idPaciente)
+        if idPaciente in consultas:
+            pac = list(Consulta.objects.filter(paciente=idPaciente).values_list())
+            print(pac)
+            return render(request, 'consulta/visualizaconsulta.html',{'pac': pac})
+
+        
     pac = Consulta.objects.all()
     return render(request, 'consulta/visualizaconsulta.html',{'pac': pac})
 
