@@ -7,22 +7,12 @@ from .models import Medicos
 from .forms import ConsultaForm
 
 
-# def paciente_verconsulta(request):
-#     # Get all
-#     pac = Consulta.objects.all()
-#     #pac = Consulta.objects.get(paciente=request.user)
-#     print("Myoutput",pac)
-#     return render(request,'paciente_verconsulta.html',{'pac': pac})
-
 def pagamentoconsulta(request):
     return render(request, 'consulta/pagamentoconsulta.html')
 
 def visualizaconsulta(request):
     pac = Consulta.objects.all()
     return render(request, 'consulta/visualizaconsulta.html',{'pac': pac})
-
-# def visualizaconsulta(request):
-#     return render(request, 'consulta/visualizaconsulta.html')
 
 def agendaconsulta(request):
     if request.method == 'POST':
