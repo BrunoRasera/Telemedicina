@@ -4,6 +4,7 @@
 {% block content %}
 <main>
     {% include 'partials/menu.html' %}
+    <h1 class="ms-5 mt-2"> Olá, {{ user.username }} </h1>
     <style>
         a:link {
             /* unvisited link */
@@ -59,18 +60,22 @@
     </style>
 
 
-    
+
 
     <section class="hero" id="hero">
         <div class="container">
             <div class="row">
 
-                <button class="button button2" type="button"><a href="{% url 'consulta' %}">Ver consultas</a></button>
+                <button class="button button2" type="button"><a href="{% url 'visualizaconsulta' %}">Ver
+                        consultas</a></button>
                 <button class="button button2" type="button"> <a href="https://meet.google.com/new">Realizar
                         consulta</a> </button>
-                <button class="button button2" type="button">Atualizar cadastro</button>
-                <button class="button button2" type="button"><a href="#">Ver histórico</a> </button>
-                <button class="button button2" type="button"><a href="#">Realizar feedback</a></button>
+                <button class="button button2" type="button"><a href="{% url 'medico' %}">Atualizar
+                        cadastro</a></button>
+                <button class="button button2" type="button"><a href="#"><a href="{% url 'historicopaciente' %}">Ver
+                            histórico</a> </button>
+                <button class="button button2" type="button"><a href="#"><a
+                            href="{% url 'feedback_consulta' %}">Realizar feedback</a></button>
 
             </div>
         </div>
@@ -81,4 +86,3 @@
 {% include 'partials/footer.html' %}
 
 {% endblock %}
-        
