@@ -25,6 +25,7 @@ def cadastro(request):
         if User.objects.filter(email = email).exists():
             print('Usuário já cadastrado')
             return redirect('cadastro')
+            
         user = User.objects.create_user(username=nome, email=email, password=senha)
         user.save()
 
@@ -56,6 +57,7 @@ def login(request):
         return redirect('login')
     return render(request, 'usuarios/login.html')
 
+    
 def logout(request):
     auth.logout(request)
     return redirect('index')
@@ -65,6 +67,7 @@ def dashboard(request):
         return render(request, 'usuarios/dashboard.html')
     else:
         return redirect('index')
+        #return render(request, 'usuarios/dashboard.html')
 
 def historicopaciente(request):
     consulta = Consulta.objects.all()
