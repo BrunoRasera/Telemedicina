@@ -12,3 +12,12 @@ def paciente_verconsulta(request):
     #med = Medicos.objects.get()
     print("Myoutput",pac)
     return render(request,'paciente_verconsulta.html',{'pac': pac})
+    
+def pagamentoconsulta(request):
+    return render(request, 'consulta/pagamentoconsulta.html')
+
+def visualizaconsulta(request):
+    return render(request, 'consulta/visualizaconsulta.html')
+
+def agendaconsulta(request):
+    return render(request, 'consulta/agendaconsulta.html')

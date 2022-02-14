@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block content %}
+       <main>
+
+        {% include 'partials/menu.html' %}
+
+        <section class="section-padding">
+            <div class="container">
+                
+                <div class="row">
+                    <h4 class="text-center col-12">Consulta agendada</h4>
+                    <h2 class="text-center col-12">Realize o pagamento</h2>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6"> <span>Forma de Pagamento</span>
+                        <div class="card">
+                            <div class="accordion" id="accordionExample">
+                                <div class="card">
+                                    <div class="card-header p-0" id="headingTwo">
+                                        <h2 class="mb-0"> <button class="btn btn-light btn-block text-left w-100 p-3 rounded-0 border-bottom-custom"type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                <div class="d-flex align-items-center justify-content-between"> <span>Pix</span> <img src="https://i.imgur.com/7kQEsHU.png" width="30"> </div>
+                                            </button> </h2>
+                                    </div>
+                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                        <div class="card-body"> <input type="text" class="form-control" placeholder="Paypal email"> </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header p-0">
+                                        <h2 class="mb-0"> <button class="btn btn-light btn-block text-left w-100 p-3 rounded-0" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                <div class="d-flex align-items-center justify-content-between"> <span>Cartao de crédito</span>
+                                                    <div class="icons"> <img src="https://i.imgur.com/2ISgYja.png" width="30"> <img src="https://i.imgur.com/W1vtnOV.png" width="30"> <img src="https://i.imgur.com/35tC99g.png" width="30"> <img src="https://i.imgur.com/2ISgYja.png" width="30"> </div>
+                                                </div>
+                                            </button> </h2>
+                                    </div>
+                                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                        <div class="card-body payment-card-body"> <span class="font-weight-normal card-text">Numero do cartão</span>
+                                            <div class="input"> <i class="fa fa-credit-card"></i> <input type="text" class="form-control" placeholder="0000 0000 0000 0000"> </div>
+                                            <div class="row mt-3 mb-3">
+                                                <div class="col-md-6"> <span class="font-weight-normal card-text">data de validade</span>
+                                                    <div class="input"> <i class="fa fa-calendar"></i> <input type="text" class="form-control" placeholder="MM/YY"> </div>
+                                                </div>
+                                                <div class="col-md-6"> <span class="font-weight-normal card-text">código de segurança</span>
+                                                    <div class="input"> <i class="fa fa-lock"></i> <input type="text" class="form-control" placeholder="000"> </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6"> <span>Resumo</span>
+                        <div class="card">
+                            <div class="d-flex justify-content-between my-4 p-3">
+                                <div class="d-flex flex-column"> <span>Consulta <i class="fa fa-caret-down"></i></span> </div>
+                                <div class="mt-1"> <span class="super-month">R$ 100,00</span> </div>
+                            </div>
+                            <hr class="mt-0 line">
+                            <div class="p-3">
+                                <div class="d-flex justify-content-between mb-2"> <span>Descontos</span> <span>R$ 0,00</span> </div>
+                            </div>
+                            <hr class="mt-0 line">
+                            <div class="mt-4 mb-3 p-3 d-flex justify-content-between">
+                                <div class="d-flex flex-column"> <span>Total a pagar:</span> <small>xxxxx</small> </div> <span>R$100,00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    {% include 'partials/footer.html' %}
+
+{% endblock %}

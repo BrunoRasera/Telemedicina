@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block content %}
+       <main>
+
+        {% include 'partials/menu.html' %}
+
+        <section class="section-padding">
+            <div class="container">
+                
+                <div class="row">
+                    <h2 class="text-center col-12">Consultas agendadas</h2>
+                </div>
+
+                <div class="row">
+                    <div class="col text-center ">
+                        <ul class="list-group list-group-horizontal text-white bg-dark text-uppercase">
+                            <li class="list-group-item flex-fill pt-3">Especialidade</li>
+                            <li class="list-group-item flex-fill">Medico</li>
+                            <li class="list-group-item flex-fill">Data</li>
+                            <li class="list-group-item flex-fill">Horario</li>
+                            <li class="list-group-item flex-fill">Editar</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 text-center align-items-center">
+                        <ul class="list-group list-group-horizontal">
+                            <li class="list-group-item flex-fill pt-3">Especialidade</li>
+                            <li class="list-group-item flex-fill">Medico</li>
+                            <li class="list-group-item flex-fill">Data</li>
+                            <li class="list-group-item flex-fill">Horario</li>
+                            <button type="button" class="btn btn-secondary list-group-item flex-fill">Editar</button>
+                        </ul>
+                        <ul class="list-group list-group-horizontal">
+                            <li class="list-group-item flex-fill pt-3">Especialidade</li>
+                            <li class="list-group-item flex-fill">Medico</li>
+                            <li class="list-group-item flex-fill">Data</li>
+                            <li class="list-group-item flex-fill">Horario</li>
+                            <button type="button" class="btn btn-secondary list-group-item flex-fill">Editar</button>
+                        </ul>
+                        <ul class="list-group list-group-horizontal">
+                            <li class="list-group-item flex-fill pt-3">Especialidade</li>
+                            <li class="list-group-item flex-fill">Medico</li>
+                            <li class="list-group-item flex-fill">Data</li>
+                            <li class="list-group-item flex-fill">Horario</li>
+                            <button type="button" class="btn btn-secondary list-group-item flex-fill">Editar</button>
+                        </ul>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    {% include 'partials/footer.html' %}
+
+{% endblock %}
