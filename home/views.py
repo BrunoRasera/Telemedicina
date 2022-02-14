@@ -23,9 +23,8 @@ def areamedico(request):
     elif request.user.is_authenticated:
         medicos = Medicos.objects.values_list('nome_medico', flat=True)
         if request.user.username in medicos:
-            print("usuario eh medico")
-            return render(request,'areamedico.html',{'form':form})
-    print("usuario nao eh medico")
+            return render(request,'areamedico.html',{'form': form})
+    print("Usuario nao esta cadastrado como medico")
     return redirect('/')
         
 
