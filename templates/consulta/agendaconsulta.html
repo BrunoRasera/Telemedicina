@@ -13,37 +13,40 @@
                     <h2 class="text-center col">Agende sua consulta</h2>
 
                 </div>
-
+                
                 <div class="row">
                     <div class="col-lg-8 col-12 mx-auto">
                         <div class="align-center booking-form">
-                            <form action="./consultaPagamento.html" method="post">
+                            <form action="{% url 'agendaconsulta' %}" method="post">
                                 {% csrf_token %}
                                 
                                 <div class="row">
                                     <h4 class="text-center mt-4">Médico</h4>
                                     <div class="col-3 mt-1 p-4 w-30 ">Especialidade</div>
                                     <div class="col-9 p-4">
-                                        <select class="form-select" aria-label="Selecione um horario">
-                                            <option>Selecione um</option>
-                                            <option>07:00</option>
-                                            <option>08:00</option>
+                                        <select name="especialidade" class="form-select" aria-label="Selecione um horario">
+                                            <option value="None">Selecione um</option>
+                                            <option value="clinico-geral">Clínico-geral</option>
+                                            <option value="cardio">Cardio</option>
+                                            <option value="pediatra">Pediatra</option>
+                                            <option value="otorrino">Otorrino</option>
                                         </select>
                                     </div>
                                     <div class="col-3 mt-2 p-4 w-30">Nome</div>
                                     <div class="col-9 p-4">
-                                        <select class="form-select" aria-label="Selecione um horario">
+                                        <select name="medico" class="form-select" aria-label="Selecione um horario">
                                             <option>Selecione um</option>
-                                            <option>07:00</option>
-                                            <option>08:00</option>
+                                            {% for medico in medicos %}
+                                            <option>{{ medico.nome_medico }}</option>
+                                            {% endfor %}
                                         </select>
                                     </div>
                                     <h4 class="text-center mt-4">Horário da consulta</h4>
                                     <div class="col-4 p-4">
-                                        <input type="date" name="date" min="2022-02-22" id="date" class="form-control" placeholder="DD/MM/AAAAA" required>
+                                        <input type="date" name="data" min="2022-02-22" id="data" class="form-control" required>
                                     </div>
                                     <div class="col-8 p-4">
-                                        <select class="form-select mt-4" aria-label="Selecione um horario">
+                                        <select name="horario" class="form-select mt-4" aria-label="Selecione um horario">
                                             <option>Selecione um horario</option>
                                             <option>07:00</option>
                                             <option>08:00</option>
@@ -64,7 +67,6 @@
                                     <button type="submit" class="form-control" id="submit-button">Agendar</button>
                                 </div>
                             </form>
-
                         </div>
                     </div>
 

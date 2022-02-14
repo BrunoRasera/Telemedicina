@@ -3,7 +3,7 @@
 
 {% block content %}
 <main>
-    <h1> Olá, {{ user.username }}  </h1>
+    <h1 class="ms-5 mt-2"> Olá, {{ user.username }}  </h1>
     <style>
         a:link {
             /* unvisited link */
@@ -76,11 +76,10 @@
                 <button class="button button2" type="button"> <a href="{% url 'pagamentoconsulta' %}">Pagamento
                         - Leo</a> </button>
                 <button class="button button2" type="button"> <a
-                        href="{% url 'visualizarconsulta' %}">Visualizar - Leo</a> </button>
-
+                        href="{% url 'visualizaconsulta' %}">Visualizar - Leo</a> </button>
                 <button class="button button2" type="button">Atualizar cadastro</button>
-                <button class="button button2" type="button">Ver histórico</button>
-                <button class="button button2" type="button">Realizar feedback</button>
+                <button class="button button2" type="button"><a href="{% url 'historicopaciente' %}">Ver histórico</a> </button>
+                <button class="button button2" type="button"><a href="{% url 'feedback_consulta' %}">Realizar feedback</a></button>
 
             </div>
         </div>

@@ -33,9 +33,11 @@
                                 <label for="senha"><b>Senha</b></label>
                                 <input id="senha" type="password" class="form-control" name="senha" placeholder="Digite aqui sua senha">
                             </div>
-                            <div class="col-12 text-center">
-                                <button class="btn btn-success" type="submit">Acessar sua conta</button>
-                                <button type="button" class="btn btn-primary" onclick="exibirCriarConta()">Ainda não tem conta? Clique aqui</button>
+                            <div class="my-5 col-12 text-center">
+                                <button class="mx-5 btn btn-success" type="submit">Acessar sua conta</button>
+                                <button type="button" class="mx-5 btn btn-primary" onclick="exibirCriarConta()">Ainda não tem conta? Clique aqui</button>
+                                <button type="button" class="mx-5 btn btn-primary"><a class="text-white" href="{% url 'paciente' %}" >seu cadastro de medico</button>
+                                <button type="button" class="mx-5 btn btn-primary"><a class="text-white" href="{% url 'medico' %}" >seu cadastro de paciente</button>
                             </div>
                         </div>
                     </form>

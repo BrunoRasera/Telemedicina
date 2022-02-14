@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect 
 from django.contrib.auth.models import User
 from django.contrib import auth
+from consulta.models import Consulta
 
 def cadastro(request):
     if request.method == 'POST':
@@ -36,13 +37,13 @@ def cadastro(request):
 
 def login(request):
     if request.method == 'POST':
-        email_digitado = request.POST['email']
-        senha_digitada = request.POST['senha']
+        email = request.POST['email']
+        senha = request.POST['senha']
 
-        if email_digitado == "" or senha_digitada == "":
+        if email == "" or senha == "":
             print('Os campos email e senha não poddem ficar em branco')
             return redirect('login')
-        print(email_digitado, senha_digitada)
+        print(email, senha)
 
         if User.objects.filter(email = email_digitado).exists():
             #email1 = User.objects.filter(email=email_digitado).values_list('email', flat=True)
@@ -58,7 +59,15 @@ def login(request):
     return render(request, 'usuarios/login.html')
 
 def logout(request):
-    pass
+    auth.logout(request)
+    return redirect('index')
 
 def dashboard(request):
-    return render(request, 'usuarios/dashboard.html')
+    if request.user.is_authenticated:
+        return render(request, 'usuarios/dashboard.html')
+    else:
+        return redirect('index')
+
+def historicopaciente(request):
+    consulta = Consulta.objects.all()
+    return render(request, 'usuarios/historicopaciente.html', {'consulta':consulta })
